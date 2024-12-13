@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+
+    <link rel="stylesheet" href="CSS_Files/Register.css">
+    <link rel="stylesheet" href="CSS_Files/HomePageAccCreate.css">
+
+    <!--<script src="scripts/HomePage.js"></script>-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+    <a href="HomePage.html">
+        <div class="ARTESANO_logo"></div>
+    </a>
+
+    <div class="Header">
+        Create Account
+    </div>
+
+    <div class="create-container" id="create">
+        
+            <input type="text" id="register-email" name="email"  placeholder="Email" class="input" autocomplete="email">
+            <input type="password" id="register-password" name="password"  placeholder="Password" class="input" autocomplete="new-password">
+        
+            <label for="user-type">Are you a seller or a customer?</label>
+            <select id="user-type" name="user-type" required>
+            <option value="">Select</option>
+            <option value="seller">Seller</option>
+            <option value="customer">Customer</option>
+            </select><br><br>
+
+            <div id="store-name-container" style="display: none;">
+                <input type="text" id="store_name" name="store-name" placeholder="Store Name" class="input">
+                <input type="text" id="store_location" name="store-location" placeholder="Store Location" class="input">
+                
+            </div>
+
+            <button onclick="register() " class="create-btn">Create</button>
+        
+    </div>
+    <div id="overlay"></div> <!-- Overlay element for login -->
+        
+    <div id="userForm" class="slide-in-form">
+        
+        <button id="closeButton">X</button><br><br>
+        <input type="email" id="email" placeholder="Email" autocomplete="email">
+        <input type="password" id="password" placeholder="Password" autocomplete="current-password">
+            <button id="loginButton">Sign In</button>
+        
+    </div>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
+    
+        <!-- Firebase initialization script -->
+        <script src="scripts/firebaseInit.js"></script>
+    
+        <!-- Our script must be loaded after firebase references -->
+        <script src="scripts/Register.js"></script>
+        <script src="scripts/Login.js"></script>
+        <script src="scripts/Logout.js"></script>
+        
+</body>
+   
+</html>

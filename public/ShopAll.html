@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Products</title>
+    <link rel="stylesheet" href="CSS_Files/ShopAll.css">
+    <link rel="stylesheet" href="CSS_Files/HomePageAccCreate.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="shopAll_header">
+        <a href="HomePage.html">
+            <div class="ARTESANO_logo"></div>
+        </a>
+        <div class="icon_container">          
+            <button id="createAccountButton" aria-label="Sign in">
+                <img src="ARTESANO_IMG/User_Icon.png" alt="Sign in">
+            </button>
+            <a href="cart.html">
+                <button id="Cart" aria-label="Cart">
+                    <img src="ARTESANO_IMG/Cart_Icon.png" alt="Cart">
+                    <span id="cart-badge" class="badge">0</span>
+                </button>
+            </a>  
+        </div>
+        <div class="header">All Products</div>
+    </div>
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search products...">
+        <button id="searchButton">Search</button>
+    </div>
+    <div class="content-area">
+        <div class="filter-container">
+            <h3>Filter by Store</h3>
+            <div id="storeFilters"></div>
+        </div>
+        <div class="product-area">
+            <div id="productList" class="product-list"></div>
+            <div id="pagination" class="pagination"></div>
+        </div>
+    </div>
+    <div id="overlay"></div>
+    <div id="userForm" class="slide-in-form">
+        <button id="closeButton">X</button><br><br>
+        <input type="email" id="email" placeholder="Email" autocomplete="email">
+        <input type="password" id="password" placeholder="Password" autocomplete="current-password">
+        <button id="loginButton">Sign In</button>
+        <p>No account? <a href="Register.html">Click here!</a></p>
+    </div>
+    <!-- Back to Top Button -->
+    <button id="backToTopButton" class="back-to-top">Back to Top</button>
+    <footer class="footer">
+        <div class="footer-content">
+            <a href="HomePage.html">
+                <img src="ARTESANO_IMG/ARTESANO_Logo2.png" alt="Artesano Logo" class="footer-logo">
+            </a>
+            <p>&copy; 2024 Artesano. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <script src="scripts/firebaseInit.js"></script>
+    <script src="scripts/displayProductsCustomer.js"></script>
+    <script src="scripts/cartFunctions.js"></script>
+    <script src="scripts/Login.js"></script>
+    <script src="scripts/Logout.js"></script>
+    <script src="scripts/slide-form.js"></script>
+    <script>
+        // JavaScript for Back to Top Button
+        window.addEventListener('scroll', function() {
+            const backToTopButton = document.getElementById('backToTopButton');
+            if (window.scrollY > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+
+        document.getElementById('backToTopButton').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>

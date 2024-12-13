@@ -1,0 +1,107 @@
+#createAccountButton {
+    padding: 0; /* Remove padding */
+    border: none; /* Remove border */
+    background: none; /* Remove background */
+    cursor: pointer;
+}
+
+.slide-in-form {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Initially hidden */
+    transition: right 0.3s ease-in-out; /* Slide-in animation */
+    background-color: rgb(108 130 79);
+    padding: 20px;
+    width: 300px;
+    height: 100%;
+    z-index: 999; /* Set a high z-index to make sure it's at the top */
+}
+
+.slide-in-form form {
+    margin-top: 20px;
+}
+
+.slide-in-form label {
+    display: block;
+}
+
+.slide-in-form input {
+    margin-bottom: 10px;
+    border: 1px solid rgba(108, 130, 79, 0.5); /* Add a subtle border to blend with the background */
+    padding: 5px;
+    width: 100%;
+    border-radius: 5px;
+    background-color: #FFFFFF; /* Soft White */
+    color: #000000; /* Black text for readability */
+    box-sizing: border-box;
+}
+
+.slide-in-form input:focus {
+    border: 1px solid #6C824F; /* Darker shade for focus */
+    box-shadow: 0 0 0 2px rgba(108, 130, 79, 0.5); /* Subtle focus shadow */
+    outline: none; /* Remove default outline */
+}
+
+#closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    background-color: rgb(218, 6, 6); /* Bright Red */
+    color: white;
+    border: none; 
+    border-radius: 5px; 
+    width: 25px; /* Set width */
+    height: 25px; /* Set height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px; /* Increase font size for better visibility */
+    transition: background-color 0.2s ease; /* Add transition for hover effect */
+}
+
+#closeButton:hover {
+    background-color: rgb(255, 69, 0); /* Bright Orange on hover for a modern look */
+}
+
+
+/* Overlay styles */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+    z-index: 998; /* Place it below the slide-in-form */
+    display: none; /* Initially hidden */
+}
+#loginButton {
+    display: inline-block;
+    outline: none;
+    border-width: 0px;
+    border-radius: 3px;
+    box-sizing: border-box;
+    font-size: 14px; /* Ensure font-size is set explicitly */
+    font-weight: 500;
+    max-width: 100%;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.1s ease-out 0s, box-shadow 0.15s cubic-bezier(0.47, 0.03, 0.49, 1.38) 0s;
+    background: rgb(34, 49, 35); /* Dark green */
+    cursor: pointer;
+    height: 32px;
+    line-height: 32px;
+    padding: 0px 12px;
+    vertical-align: middle;
+    width: auto;
+    color: rgb(255, 255, 255);
+}
+
+#loginButton:hover {
+    background: rgb(50, 70, 50); /* Slightly lighter green */
+    text-decoration: inherit;
+    transition-duration: 0s, 0.15s;
+    color: rgb(255, 255, 255);
+}
+

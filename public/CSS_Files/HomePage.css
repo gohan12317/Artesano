@@ -1,0 +1,422 @@
+/* Main-Page */
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #F4F2E5;
+    
+}
+
+.Whole_Background {
+    position: relative;
+    width: 100%; /* Cover the entire width of the viewport */
+    min-height: 100vh; /* Cover at least the height of the viewport */
+}
+
+/* IMG_4977 1 */
+.content {
+    position: absolute;
+    width: 100%;
+    height: 800px;
+    left: 0;
+    top: 140px;
+    background-size: cover;
+    background-position: center center;
+    transition: background-image 1s ease-in-out; /* Smooth transition */
+}
+
+@keyframes slide {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.content.fade {
+    animation: slide 1s ease-in-out;
+}
+
+/* ARTESANO_Logo */
+.ARTESANO_logo {
+    position: absolute;
+    width: 500px; /* Change this value based on your needs */
+    height: 500px; /* Maintain aspect ratio */
+    left: 50%;
+    top: -40px;
+    transform: translateX(-50%);
+    background: url(../ARTESANO_IMG/ARTESANO_Logo.png) no-repeat center;
+    background-size: contain; /* Ensures the image fits within the dimensions */
+}
+
+/* User_Cart-Icon */
+.icon_container{
+    position: absolute;
+    right: 200px;
+    top: 40px;
+    display: flex;       /* Aligns children (buttons) inline */
+    align-items: center; /* Centers items vertically */
+}
+.icon_container button {
+    background: none;  /* Removes any background styling */
+    border: none;      /* Removes border */
+    cursor: pointer;   /* Changes cursor to pointer on hover */
+    padding: 0;        /* Removes padding */
+    margin-right: 10px; /* Adds space between the buttons */
+}
+.content_text {
+    position: absolute;
+    width: 1208px;
+    height: 192px;
+    left: 50%;
+    top: 990px;
+    transform: translateX(-50%);
+
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+
+    color: #000000;
+
+}
+
+/* Artisano: Your Portal to Local Treasures */
+.Heading{
+    position: absolute;
+    width: fit-content;
+    height: 18px;
+    left: 50%;
+    transform:translateX(-50%);
+    top: 963px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 18px;
+
+    color: #000000;
+
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.Local_slogan{
+    position: absolute;
+    top: 350px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 110px;
+    color: #F4F2E5;
+
+    font-family: "Nothing You Could Do", cursive;
+    font-weight: 999;
+    font-style: normal;
+      
+}
+
+.button-container {
+    position: absolute;
+    top: 680px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adds space between the buttons */
+}
+
+.Shop-btn, .About-btn {
+    width: 150px;
+    height: 45px;
+    text-decoration: none;
+    text-align: center;
+    font-family: "Mukta Vaani", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: #000000;
+    background-color: rgb(240, 240, 240);
+    border-radius: 5px;
+    line-height: 45px;
+    transition: width 0.3s, height 0.3s; 
+    padding: 5px; 
+}
+
+.Shop-btn:hover, .About-btn:hover {
+    padding: 5.5px;
+    line-height: 44px;
+}
+
+/* PARA RESPONSIVE */
+/* Responsive adjustments for devices with a maximum width of 768px (tablets and down) */
+
+/*@media (max-width: 1280px){
+
+    .ARTESANO_logo {
+        width: 32vw; 
+        height: 32vw;
+        top: -30px; 
+    }
+  
+    .content {
+        height: 50%; 
+        width: 1180px;
+        top: 120px; 
+    }
+    .content_text{
+        left: 50%;
+        top: 650px;
+        width: 80%;
+        transform: translateX(-50%);
+    }
+    .Local_slogan{
+        position: absolute;
+        top: 200px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 55px;
+        color: #F4F2E5;
+    
+        font-family: "Nothing You Could Do", cursive;
+        font-weight: 999;
+        font-style: normal;
+          
+    }
+    
+    .Shop-btn{
+        position: absolute;
+        width: 100px;
+        height: 25px;
+        top: 300px;
+        left: 50%;
+        transform: translateX(-50%);
+    
+        text-decoration: none;
+        text-align: center;
+        font-family: "Mukta Vaani", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        color: #000000;
+        background-color: rgb(240, 240, 240);
+        border-radius: 5px;
+        line-height: 25px;
+        padding:3px;
+    }
+    .Shop-btn:hover{
+      padding: 3.5px;
+      line-height: 24px;
+    }
+    
+    .Heading{
+        top: 520px;
+        font-size: 20px;
+    }
+    .content_text{
+      top: 540px;
+      font-size: 18px;
+    }
+    .icon_container{
+      right: 10px;
+    }
+  
+  }*/
+
+@media (max-width: 1024px) {
+    .ARTESANO_logo {
+        width: 40vw; /* Responsive width */
+        height: 40vw; /* Responsive height */
+        top: -10px; /* Adjusted top for smaller screens */
+    }
+
+    .content {
+        height: 433px; /* Adjusted height */
+        width: 100%;
+        top: 130px; /* Adjusted top for smaller screens */
+    }
+    .content_text{
+        left: 50%;
+        top: 630px;
+        width: 80%;
+        transform: translateX(-50%);
+    }
+    .Local_slogan{
+        position: absolute;
+        top: 243px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 70px;
+        color: #F4F2E5;
+    
+        font-family: "Nothing You Could Do", cursive;
+        font-weight: 999;
+        font-style: normal;
+          
+    }
+    
+    .button-container {
+        position: absolute;
+        top: 330px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+        gap: 20px; /* Adds space between the buttons */
+    }
+
+    .Shop-btn, .About-btn {
+        width: 150px;
+        height: 50px;
+        text-decoration: none;
+        text-align: center;
+        font-family: "Mukta Vaani", sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        color: #000000;
+        background-color: rgb(240, 240, 240);
+        border-radius: 5px;
+        line-height: 50px;
+    }
+    
+    .Shop-btn:hover, .About-btn:hover {
+        padding: 5.5px;
+        line-height: 44px;
+    }
+
+    .Heading{
+        top: 600px;
+        font-size: 24px;
+    }
+
+    .icon_container{
+        right: 100px;
+    }
+
+}
+
+@media (max-width: 989px) {
+    .ARTESANO_logo {
+        width: 30vw; /* Responsive width */
+        height: 30vw; /* Responsive height */
+        top: -10px; /* Adjusted top for smaller screens */
+    }   
+
+    .content {
+        height: 420px; /* Adjusted height */
+        width: 100%;
+        top: 100px; /* Adjusted top for smaller screens */
+    }
+    .Local_slogan{
+        top: 180px;
+        font-size: 60px;
+    }
+    .Heading{
+        top: 550px;
+    }
+    .content_text{
+        left: 50%;
+        top: 570px;
+        width: 80%;
+        transform: translateX(-50%);
+    }
+    .icon_container{
+        right: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .ARTESANO_logo {
+        width: 40vw; /* Responsive width */
+        height: 40vw; /* Responsive height */
+        top: -10px; /* Adjusted top for smaller screens */
+    }
+
+    .content {
+        height: 346px; /* Adjusted height */
+        width: 100%;
+        top: 110px; /* Adjusted top for smaller screens */
+    }
+    .content_text{
+        left: 50%;
+        top: 500px;
+        width: 80%;
+        transform: translateX(-50%);
+    }
+    .Local_slogan{
+        top: 150px;
+        
+        font-size: 40px;
+    }
+    
+    .button-container {
+        top: 260px;
+    }
+
+    .Shop-btn, .About-btn {
+        width: 100px;
+        height: 30px;
+        line-height: 30px;
+    }
+    
+    .Shop-btn:hover, .About-btn:hover {
+        padding: 3.5px;
+        line-height: 24px;
+    }
+
+    .Heading{
+        top: 480px;
+        font-size: 23px;
+    }
+    .content_text {
+        font: 20px;
+    }
+    .icon_container{
+        right: 80px;
+    }
+}
+
+/* Responsive adjustments for devices with a maximum width of 480px (small smartphones) */
+@media (max-width: 480px) {
+    .ARTESANO_logo {
+        width: 40vw; /* More responsive width */
+        height: 40vw; /* More responsive height */
+        top: 5px; /* Less negative to fit small screens */
+    }
+
+    .content {
+        height: 300px; 
+        width: 100%;
+        top: 90px; 
+    }
+    .content_text{
+        left: 50%;
+        top: 435px;
+        width: 80%;
+        transform: translateX(-50%);
+        font-size: 15px;
+    }
+    .Heading{
+        max-width:max-content;
+        top: 420px;
+        font-size: 18px;
+    }
+    .Local_slogan{
+        left: 50%;
+        font-size: 35px;
+    }
+    .icon_container{
+        right: 20px;
+    }
+    
+    .button-container {
+        top: 215px;
+    }
+
+    .Shop-btn, .About-btn {
+        width: 100px;
+        height: 30px;
+        line-height: 30px;
+    }
+
+    .Shop-btn:hover, .About-btn:hover {
+        padding: 3.5px;
+        line-height: 24px;
+    }
+}

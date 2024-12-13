@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Artesano</title>
+
+    <link rel="stylesheet" href="CSS_Files/HomePage.css">
+    <link rel="stylesheet" href="CSS_Files/HomePageAccCreate.css">
+
+    <!--    FOR FONTS     -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Mansalva&family=Mochiy+Pop+One&family=Nothing+You+Could+Do&family=Permanent+Marker&family=Protest+Riot&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="Whole_Background">
+        <div class="ARTESANO_logo"></div>
+
+        <div class="icon_container">
+            <button id="createAccountButton">
+                <img src="ARTESANO_IMG/User_Icon.png" alt="Sign in">
+            </button>
+        </div>    
+        
+        <div id="overlay"></div> <!-- Overlay element -->
+        
+        <div id="userForm" class="slide-in-form">
+            <button id="closeButton">X</button><br><br>
+            <input type="email" id="email" placeholder="Email" autocomplete="email">
+            <input type="password" id="password" placeholder="Password" autocomplete="current-password">
+            <button id="loginButton">Sign In</button>
+            <p>No account? <a href="Register.html">Click here!</a></p>
+            <button type="button" onclick="logout()">Logout</button>
+        </div>
+
+        <div class="content">
+            <div class="button-container">
+                <a href="ShopAll.html" class="Shop-btn">Shop Now</a>
+                <a href="About-Us.html" class="About-btn">About Us</a>
+            </div>
+        </div>
+        <div class="Local_slogan">
+            Rooted in <br>local pride.
+        </div>
+        
+        <div class="Heading"> 
+            Artesano: Your Portal to Local Treasure
+        </div>
+        
+        <div class="content_text">
+            <p> Welcome to Artesano, where tradition meets craftsmanship in the heart of Dumaguete City. As our name suggests, 'craftsman' in Spanish, we are dedicated to offering meticulously crafted goods that celebrate the rich cultural heritage of our community. At Artesano, we believe in the beauty of handcrafted products, each piece telling a story of skill, dedication, and passion. Browse our diverse collection, ranging from bespoke furniture and hand-woven textiles to unique pottery and artisanal home decor. Each item at Artesano is a testament to the artistry and craftsmanship of local artisans, ensuring that you take home not just a product, but a piece of Dumaguete’s vibrant culture. Visit us and experience the warmth and authenticity of true craftsmanship at Artesano, your local source for exquisite artisanal treasures.</p>
+        </div>
+
+        <div class="inventory_overview">
+            <div id="productList" class="product-list"></div>
+            <div id="pagination" class="pagination"></div>
+        </div>
+
+    </div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+
+    <!-- Our script must be loaded after firebase references -->
+    <script src="scripts/firebaseInit.js"></script>
+    <script src="scripts/Login.js"></script>
+    <script src="scripts/Logout.js"></script>
+    <script src="scripts/slide-form.js"></script>
+
+    <!-- Page Unique Scripts -->
+    <script src="scripts/HomePage.js"></script>
+</body>
+</html>
+
