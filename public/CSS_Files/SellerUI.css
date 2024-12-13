@@ -87,7 +87,7 @@ body {
   .edit-btn{
     padding: 9px;
     font-size: 16px;
-    background-color: rgb(24, 183, 211);
+    background-color: #6c824d;
     color: white;
     border: none;
     cursor: pointer;
@@ -97,7 +97,7 @@ body {
   .delete-btn{
     padding: 9px;
     font-size: 16px;
-    background-color: rgb(190, 11, 11);
+    background-color: #6c824d;
     color: white;
     border: none;
     cursor: pointer;
@@ -280,4 +280,10 @@ body {
   .fixed-btn{
     padding: 5px 10px;
   }
+}
+
+.required-asterisk {
+  color: red;
+  margin-left: 5px;
+  font-weight: bold;
 }

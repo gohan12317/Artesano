@@ -21,10 +21,6 @@ body {
     background-color: #F4F2E5; /* Add a background color if needed */
     padding-top: 10px; /* Adjust padding as needed */
     padding-bottom: 10px;
-    /* Remove sticky positioning */
-    /* position: sticky; */
-    /* top: 0; */
-    /* z-index: 1000; */
 }
 
 .ARTESANO_logo {
@@ -210,6 +206,48 @@ body {
 }
 
 /* Media Queries for Responsive Design */
+@media (max-width: 1280px) {
+    .content-area {
+        flex-direction: column; /* Stack the filter and products vertically */
+        align-items: center; /* Center align the content */
+    }
+
+    .filter-container {
+        margin-bottom: 20px; /* Space between filter and product area when stacked */
+        width: 100%; /* Full width for small screens */
+        max-width: 90%; /* Ensure the filter container doesn't get too wide */
+    }
+
+    .product-area {
+        width: 100%; /* Full width for small screens */
+    }
+
+    .product-list {
+        gap: 10px; /* Reduce gap between products */
+        justify-content: center; /* Center align the product items */
+    }
+
+    .product-item {
+        width: calc(100% - 40px); /* Adjust width for padding */
+        max-width: 450px; /* Set a maximum width for product items */
+        margin: 0 10px; /* Center align with some margin */
+    }
+
+    .shopAll_header {
+        padding: 10px;
+    }
+
+    .header {
+        font-size: 24px;
+    }
+
+    .icon_container {
+        position: absolute;
+        right: 40px;
+        top: 50px;
+    }
+}
+
 @media (max-width: 768px) {
     .content-area {
         flex-direction: column; /* Stack the filter and products vertically */
@@ -372,10 +410,6 @@ body {
     background-color: #F4F2E5; /* Add a background color if needed */
     padding-top: 10px; /* Adjust padding as needed */
     padding-bottom: 10px;
-    /* Remove sticky positioning */
-    /* position: sticky; */
-    /* top: 0; */
-    /* z-index: 1000; */
 }
 
 .back-to-top {

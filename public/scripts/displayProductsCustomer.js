@@ -40,7 +40,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 database.ref('users/' + product.sellerId).once('value', function(userSnapshot) {
                     const userData = userSnapshot.exists() ? userSnapshot.val() : null;
                     const storeName = userData && userData.store_name ? userData.store_name : 'Unknown Store';
-
+                    const storeLocation = userData && userData.store_location ? userData.store_location : 'Unknown Location';
+            
                     const productItem = document.createElement('div');
                     productItem.className = 'product-item';
                     productItem.innerHTML = `
@@ -50,6 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <p>Price: ₱${product.productPrice}</p>
                         <p>Stock: ${product.productStock}</p>
                         <p>Store: ${storeName}</p>
+                        <p>Location: ${storeLocation}</p>
                         <label for="quantity-${product.id}">Quantity:</label>
                         <input type="number" id="quantity-${product.id}" name="quantity" min="1" max="${product.productStock}" value="1">
                         <button class="add-to-cart-btn" onclick="addToCart('${product.id}')">Add to Cart</button>
@@ -57,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     productList.appendChild(productItem);
                 }).catch(function(error) {
                     console.error('Error fetching user data:', error);
-
+            
                     const productItem = document.createElement('div');
                     productItem.className = 'product-item';
                     productItem.innerHTML = `
@@ -67,6 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <p>Price: ₱${product.productPrice}</p>
                         <p>Stock: ${product.productStock}</p>
                         <p>Store: Unknown Store</p>
+                        <p>Location: Unknown Location</p>
                         <label for="quantity-${product.id}">Quantity:</label>
                         <input type="number" id="quantity-${product.id}" name="quantity" min="1" max="${product.productStock}" value="1">
                         <button class="add-to-cart-btn" onclick="addToCart('${product.id}')">Add to Cart</button>
@@ -74,13 +77,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     productList.appendChild(productItem);
                 });
             });
-
             renderPagination();
         });
     }
+
     function renderPagination() {
         pagination.innerHTML = '';
-    
+
         const createPageButton = (text, isActive = false, isDisabled = false) => {
             const pageButton = document.createElement('button');
             pageButton.className = 'page-btn';
@@ -89,13 +92,13 @@ document.addEventListener('DOMContentLoaded', function() {
             pageButton.textContent = text;
             return pageButton;
         };
-    
+
         const addEllipsis = () => {
             const ellipsis = document.createElement('span');
             ellipsis.textContent = '...';
             pagination.appendChild(ellipsis);
         };
-    
+
         const addPageButton = (page) => {
             const pageButton = createPageButton(page, page === currentPage);
             pageButton.onclick = function() {
@@ -104,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
             };
             pagination.appendChild(pageButton);
         };
-    
+
         if (totalPages <= 5) {
             for (let i = 1; i <= totalPages; i++) {
                 addPageButton(i);
@@ -112,18 +115,18 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             if (currentPage > 3) addPageButton(1);
             if (currentPage > 4) addEllipsis();
-    
+
             const startPage = Math.max(1, currentPage - 2);
             const endPage = Math.min(totalPages, currentPage + 2);
-    
+
             for (let i = startPage; i <= endPage; i++) {
                 addPageButton(i);
             }
-    
+
             if (currentPage < totalPages - 3) addEllipsis();
             if (currentPage < totalPages - 2) addPageButton(totalPages);
         }
-    
+
         if (currentPage > 1) {
             const prevButton = createPageButton('<', false, false);
             prevButton.onclick = function() {
@@ -132,7 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
             };
             pagination.insertBefore(prevButton, pagination.firstChild);
         }
-    
+
         if (currentPage < totalPages) {
             const nextButton = createPageButton('>', false, false);
             nextButton.onclick = function() {
@@ -142,27 +145,24 @@ document.addEventListener('DOMContentLoaded', function() {
             pagination.appendChild(nextButton);
         }
     }
-    
+
     // Show or hide the button when scrolling
-window.addEventListener('scroll', function() {
-    const backToTopButton = document.getElementById('backToTopButton');
-    if (window.scrollY > 300) {
-        backToTopButton.style.display = 'block';
-    } else {
-        backToTopButton.style.display = 'none';
-    }
-});
-
-// Scroll to the top when the button is clicked
-document.getElementById('backToTopButton').addEventListener('click', function() {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+    window.addEventListener('scroll', function() {
+        const backToTopButton = document.getElementById('backToTopButton');
+        if (window.scrollY > 300) {
+            backToTopButton.style.display = 'block';
+        } else {
+            backToTopButton.style.display = 'none';
+        }
     });
-});
 
-
-    
+    // Scroll to the top when the button is clicked
+    document.getElementById('backToTopButton').addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
 
     function loadStoreFilters() {
         storeFilters.innerHTML = '';
@@ -256,8 +256,6 @@ document.getElementById('backToTopButton').addEventListener('click', function() 
             }
         });
     }
-
-
 
     // Initial display of products and load filters
     updateCartBadge();
